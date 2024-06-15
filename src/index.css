@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #040418;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,13 +17,19 @@ a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
+  margin: 10px;
 }
 a:hover {
   color: #535bf2;
 }
 
+p {
+  text-align: left;
+}
+
 body {
   margin: 0;
+  padding: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
@@ -52,6 +58,45 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.navbar {
+  top: 0;
+  position: fixed;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.navbar-link:hover {
+  text-decoration: underline;
+}
+
+.main-content {
+  margin-top: 80px; /* Ajusta este valor según la altura de tu navbar */
+  width: 100%;
+  padding-top: 4rem; /* Ajusta el padding top para evitar que el contenido se oculte debajo del navbar */
 }
 
 @media (prefers-color-scheme: light) {
