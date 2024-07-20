@@ -1,73 +1,17 @@
+version: "3.9"
 services:
   build:
-    image: 'node:22-alpine'
+    image: node:22-alpine
     volumes:
-      - '/data/coolify/applications/d0swkcs/:/app'
+      - ./:/app
     working_dir: /app
-    command:
-      - npm
-      - install
-      - '&&'
-      - npm
-      - run
-      - build
-    networks:
-      d0swkcs: null
-    labels:
-      - coolify.managed=true
-      - coolify.version=4.0.0-beta.317
-      - coolify.applicationId=2
-      - coolify.type=application
-      - coolify.name=build-d0swkcs-042250795717
-      - coolify.pullRequestId=0
-    restart: unless-stopped
-    container_name: build-d0swkcs-042250795717
+    command: ["npm", "install", "&&", "npm", "run", "build"]
   web:
-    image: 'nginx:alpine'
+    image: nginx:alpine
     ports:
-      - '3000:80'
+      - "3000:80"
     volumes:
-      - '/data/coolify/applications/d0swkcs/:/app'
-      - '/data/coolify/applications/d0swkcs/nginx.conf:/etc/nginx/conf.d/hectorsaravia.conf'
+      - ./:/app
+      - ./nginx.conf:/etc/nginx/conf.d/hectorsaravia.conf
     depends_on:
       - build
-    networks:
-      d0swkcs: null
-    labels:
-      - traefik.enable=true
-      - traefik.http.middlewares.gzip.compress=true
-      - traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https
-      - traefik.http.routers.http-0-v8w8o8k.entryPoints=http
-      - traefik.http.routers.http-0-v8w8o8k.middlewares=redirect-to-https
-      - 'traefik.http.routers.http-0-v8w8o8k.rule=Host(`hectorsaravia.info`) && PathPrefix(`/`)'
-      - traefik.http.routers.http-0-v8w8o8k.service=http-0-v8w8o8k
-      - traefik.http.routers.https-0-v8w8o8k.entryPoints=https
-      - traefik.http.routers.https-0-v8w8o8k.middlewares=gzip
-      - 'traefik.http.routers.https-0-v8w8o8k.rule=Host(`hectorsaravia.info`) && PathPrefix(`/`)'
-      - traefik.http.routers.https-0-v8w8o8k.service=https-0-v8w8o8k
-      - traefik.http.routers.https-0-v8w8o8k.tls.certresolver=letsencrypt
-      - traefik.http.routers.https-0-v8w8o8k.tls=true
-      - traefik.http.services.http-0-v8w8o8k.loadbalancer.server.port=3000
-      - traefik.http.services.https-0-v8w8o8k.loadbalancer.server.port=3000
-      - 'caddy_0.encode=zstd gzip'
-      - 'caddy_0.handle_path.0_reverse_proxy={{upstreams 3000}}'
-      - 'caddy_0.handle_path=/*'
-      - caddy_0.header=-Server
-      - 'caddy_0.try_files={path} /index.html /index.php'
-      - 'caddy_0=https://hectorsaravia.info'
-      - caddy_ingress_network=d0swkcs
-      - coolify.managed=true
-      - coolify.version=4.0.0-beta.317
-      - coolify.applicationId=2
-      - coolify.type=application
-      - coolify.name=web-d0swkcs-042250796394
-      - coolify.pullRequestId=0
-    restart: unless-stopped
-    container_name: web-d0swkcs-042250796394
-volumes: {  }
-networks:
-  d0swkcs:
-    name: d0swkcs
-    external: true
-configs: {  }
-secrets: {  }
