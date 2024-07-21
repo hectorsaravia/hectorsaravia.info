@@ -6,7 +6,7 @@ RUN npm install
 COPY . .
 RUN npm run build
 # Stage 2: Create the production image
-FROM nginx:latest
+FROM nginx:latest as web
 COPY --from=build /app/dist /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
