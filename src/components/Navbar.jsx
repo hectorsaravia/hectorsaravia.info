@@ -8,11 +8,11 @@ const Navbar = ({ nameRef, aboutRef, contactRef }) => {
     <nav className="navbar">
       <div className="navbar-container">
         <a
-          href="#!"
+          href="/"
           className="navbar-logo"
           onClick={() => scrollToRef(nameRef)}
         >
-          MiLogo
+          <img src="HS-dark.png" alt="Logo" />
         </a>
         <ul className="navbar-menu">
           <li className="navbar-item">

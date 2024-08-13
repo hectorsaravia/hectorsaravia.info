@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <div>
       <a
-        href="www.linkedin.com/in/hectorsaraviab"
+        href="https://www.linkedin.com/in/hectorsaraviab"
         target="_blank"
         rel="noopener noreferrer"
       >

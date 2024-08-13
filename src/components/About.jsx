@@ -5,10 +5,8 @@ const About = () => {
     <div>
       <h4>Acerca de mí</h4>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
-        quasi nisi quisquam ducimus, cupiditate eius. Cum quasi ipsum eveniet
-        harum nostrum quas porro, placeat accusamus odio dicta dolorum, maxime
-        aspernatur!
+        Desarrollador Full-stack, con conocimientos en Javascript/NodeJS,
+        Laravel/PHP, .NET/C#, MySQL/PostgreSQL
       </p>
     </div>
   );
