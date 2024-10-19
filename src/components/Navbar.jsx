@@ -17,7 +17,7 @@ const Navbar = ({ nameRef, aboutRef, contactRef }) => {
         <ul className="navbar-menu">
           <li className="navbar-item">
             <a
-              href="#!"
+              href="#nameRef"
               className="navbar-link"
               onClick={() => scrollToRef(nameRef)}
             >
@@ -26,7 +26,7 @@ const Navbar = ({ nameRef, aboutRef, contactRef }) => {
           </li>
           <li className="navbar-item">
             <a
-              href="#!"
+              href="#aboutRef"
               className="navbar-link"
               onClick={() => scrollToRef(aboutRef)}
             >
@@ -35,7 +35,7 @@ const Navbar = ({ nameRef, aboutRef, contactRef }) => {
           </li>
           <li className="navbar-item">
             <a
-              href="#!"
+              href="#contactRef"
               className="navbar-link"
               onClick={() => scrollToRef(contactRef)}
             >

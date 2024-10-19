@@ -59,9 +59,15 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 2.5rem;
+}
+
 .navbar {
   top: 0;
-  position: fixed;
+  position: absolute;
 }
 
 .navbar-container {

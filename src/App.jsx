@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Name from "./components/Name";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 import "./App.css";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Contact />
         </div>
       </div>
+      <Footer></Footer>
     </>
   );
 }
