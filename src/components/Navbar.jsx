@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa"; // Importa los iconos de hamburguesa y cerrar
 import hectorSaravia from "../assets/hectorsaravia.svg";
 
-const Navbar = ({ nameRef, aboutRef, experienceRef, contactRef }) => {
+const Navbar = ({ nameRef, aboutRef, experienceRef }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   const scrollToRef = (ref) => {
     ref.current.scrollIntoView({ behavior: "smooth" });
+    setIsMenuOpen(false);
   };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -15,7 +22,13 @@ const Navbar = ({ nameRef, aboutRef, experienceRef, contactRef }) => {
         >
           <img src={hectorSaravia} alt="Hector Saravia" />
         </a>
-        <ul className="navbar-menu">
+
+        {/* Ícono de hamburguesa para dispositivos móviles */}
+        <div className="menu-icon" onClick={toggleMenu}>
+          {isMenuOpen ? <FaTimes /> : <FaBars />}
+        </div>
+
+        <ul className={`navbar-menu ${isMenuOpen ? "active" : ""}`}>
           <li className="navbar-item">
             <a
               href="#name"
@@ -41,15 +54,6 @@ const Navbar = ({ nameRef, aboutRef, experienceRef, contactRef }) => {
               onClick={() => scrollToRef(experienceRef)}
             >
               Experiencia
-            </a>
-          </li>
-          <li className="navbar-item">
-            <a
-              href="#contact"
-              className="navbar-link"
-              onClick={() => scrollToRef(contactRef)}
-            >
-              Contacto
             </a>
           </li>
         </ul>

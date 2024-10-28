@@ -100,15 +100,71 @@ footer {
   width: 100%;
 }
 
-.navbar {
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: fixed;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  list-style: none;
+
+}
+
+.navbar-menu.active {
+  display: flex;
+  flex-direction: column;
   top: 0;
-  position: absolute;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--primary-color);
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none; /* Oculta el menú por defecto en móvil */
+  }
+  
+  .menu-icon {
+    display: block; /* Muestra el icono de hamburguesa */
+  }
+}
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--primary-color);
+  z-index: 1000; /* Asegura que la navbar esté encima del contenido */
 }
 
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 2rem;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 }
 
 .navbar-logo {
@@ -117,13 +173,6 @@ footer {
   align-items: center;
   display: flex;
   gap: 0.5rem;
-}
-
-.navbar-menu {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
 }
 
 .navbar-link {
@@ -147,13 +196,32 @@ footer {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 1rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr 4fr;
+    gap: 0.5rem;
+  }
+}
+
+.education {
+  margin: 3rem 1rem;
 }
 
 .experience-logo {
-  width: 120px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
   margin: auto;
   object-fit: contain;
+  max-width: 200px;
+  max-width: 200px;
+
+  @media screen and (max-width: 768px) {
+    margin: auto 0;
+  }
+}
+
+.experience-info, .education-info {
+  margin: auto 2rem;
 }
 
 .dot {

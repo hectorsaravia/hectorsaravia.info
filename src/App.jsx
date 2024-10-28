@@ -15,9 +15,6 @@ function App() {
   const experienceRef = useRef(null);
   const educationRef = useRef(null);
 
-  const scrollToRef = (ref) => {
-    ref.current.scrollIntoView({ behavior: "smooth" });
-  };
   return (
     <>
       <Navbar
@@ -27,8 +24,9 @@ function App() {
         contactRef={contactRef}
       />
       <main className="main-content">
-        <section ref={nameRef}>
-          <Name />
+        <section>
+          <Name ref={nameRef} />
+          <Contact ref={contactRef} />
         </section>
         <section ref={aboutRef}>
           <About />
@@ -38,9 +36,6 @@ function App() {
         </section>
         <section ref={educationRef}>
           <Education />
-        </section>
-        <section ref={contactRef}>
-          <Contact />
         </section>
       </main>
       <Footer></Footer>

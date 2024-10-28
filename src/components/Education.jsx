@@ -1,6 +1,14 @@
 import React from "react";
 
-const education = [];
+const education = [
+  {
+    name: "Universidad Diego Portales",
+    datetime_start: "2016",
+    datetime_end: "2023",
+    start: "2016",
+    end: "2023",
+  },
+];
 
 const Education = () => {
   return (
@@ -10,16 +18,8 @@ const Education = () => {
       </h4>
       {education.map((education, index) => (
         <div key={index} className="education">
-          <img
-            className="education-logo"
-            src={education.logo}
-            alt={education.name}
-          />
           <div className="education-info">
             <h5>{education.name}</h5>
-            <p>
-              {education.organisation} · {education.location}
-            </p>
             <p className="education-date">
               <date datetime={education.datetime_start}>{education.start}</date>
               {" - "}
