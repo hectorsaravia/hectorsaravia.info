@@ -1,6 +1,7 @@
 import React from "react";
+import hectorSaravia from "../assets/hectorsaravia.svg";
 
-const Navbar = ({ nameRef, aboutRef, contactRef }) => {
+const Navbar = ({ nameRef, aboutRef, experienceRef, contactRef }) => {
   const scrollToRef = (ref) => {
     ref.current.scrollIntoView({ behavior: "smooth" });
   };
@@ -12,12 +13,12 @@ const Navbar = ({ nameRef, aboutRef, contactRef }) => {
           className="navbar-logo"
           onClick={() => scrollToRef(nameRef)}
         >
-          <img src="HS-dark.png" alt="Logo" />
+          <img src={hectorSaravia} alt="Hector Saravia" />
         </a>
         <ul className="navbar-menu">
           <li className="navbar-item">
             <a
-              href="#nameRef"
+              href="#name"
               className="navbar-link"
               onClick={() => scrollToRef(nameRef)}
             >
@@ -26,16 +27,25 @@ const Navbar = ({ nameRef, aboutRef, contactRef }) => {
           </li>
           <li className="navbar-item">
             <a
-              href="#aboutRef"
+              href="#about"
               className="navbar-link"
               onClick={() => scrollToRef(aboutRef)}
             >
-              Sobre Mí
+              Acerca
             </a>
           </li>
           <li className="navbar-item">
             <a
-              href="#contactRef"
+              href="#experience"
+              className="navbar-link"
+              onClick={() => scrollToRef(experienceRef)}
+            >
+              Experiencia
+            </a>
+          </li>
+          <li className="navbar-item">
+            <a
+              href="#contact"
               className="navbar-link"
               onClick={() => scrollToRef(contactRef)}
             >
