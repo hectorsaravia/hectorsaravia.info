@@ -8,7 +8,11 @@ const Navbar = ({ nameRef, aboutRef, experienceRef }) => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const scrollToRef = (ref) => {
-    ref.current.scrollIntoView({ behavior: "smooth" });
+    const offsetTop = ref.current.offsetTop - 70;
+    window.scrollTo({
+      top: offsetTop,
+      behavior: "smooth",
+    });
     setIsMenuOpen(false);
   };
 
@@ -31,7 +35,7 @@ const Navbar = ({ nameRef, aboutRef, experienceRef }) => {
         <ul className={`navbar-menu ${isMenuOpen ? "active" : ""}`}>
           <li className="navbar-item">
             <a
-              href="#name"
+              href="#home"
               className="navbar-link"
               onClick={() => scrollToRef(nameRef)}
             >

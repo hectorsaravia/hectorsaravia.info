@@ -11,7 +11,6 @@ import "./App.css";
 function App() {
   const nameRef = useRef(null);
   const aboutRef = useRef(null);
-  const contactRef = useRef(null);
   const experienceRef = useRef(null);
   const educationRef = useRef(null);
 
@@ -21,12 +20,11 @@ function App() {
         nameRef={nameRef}
         aboutRef={aboutRef}
         experienceRef={experienceRef}
-        contactRef={contactRef}
       />
       <main className="main-content">
-        <section>
-          <Name ref={nameRef} />
-          <Contact ref={contactRef} />
+        <section ref={nameRef}>
+          <Name />
+          <Contact />
         </section>
         <section ref={aboutRef}>
           <About />

@@ -4,15 +4,14 @@
   font-weight: 400;
 
   /*variables*/
-  --primary-color: #040418;
-  --secondary-color: #C1C1FF;
-  --tertiary-color: #646cff;
-  --quaternary-color: #A25A07;
+  --primary-color: #F7A445;
+  --secondary-color: #ADB1FF;
   --text-color: #FFFFFFDE;
+  --background-color: #040418;
 
   color: var(--text-color);
 
-  background-color: #040418;
+  background-color: var(--background-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -22,7 +21,7 @@
 
 a {
   font-weight: 500;
-  color: var(--tertiary-color);
+  color: var(--secondary-color);
   text-decoration: inherit;
   margin: 10px;
 }
@@ -45,14 +44,14 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  color: var(--quaternary-color)
+  color: var(--primary-color)
 }
 
 h4 {
   font-size: 1.5rem;
   margin: 0.5rem 0;
   text-align: left;
-  color: var(--quaternary-color);
+  color: var(--primary-color);
 }
 
 h5 {
@@ -60,7 +59,7 @@ h5 {
   margin: 0.5rem 0;
   font-weight: 500;
   text-align: left;
-  color: var(--quaternary-color);
+  color: var(--primary-color);
   text-decoration: dashed;
 }
 
@@ -81,7 +80,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: var(--secondary-color);
 }
 button:focus,
 button:focus-visible {
@@ -96,13 +95,13 @@ footer {
   margin-top: 5rem;
   bottom: 0;
   height: 2.5rem;
-  border-top: 1px solid var(--quaternary-color);
+  border-top: 1px solid var(--primary-color);
   width: 100%;
 }
 
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 1rem 2rem;
   position: fixed;
@@ -130,10 +129,11 @@ nav {
   left: 0;
   height: 100vh;
   width: 100%;
-  background-color: var(--primary-color);
+  background-color: var(--background-color);
   justify-content: center;
   text-align: center;
   gap: 2rem;
+  transition: all 0.2s ease-in-out;
 }
 
 @media (max-width: 768px) {
@@ -152,15 +152,18 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--primary-color);
-  z-index: 1000; /* Asegura que la navbar esté encima del contenido */
+  padding: 0;
+  background-color: var(--background-color);
+  z-index: 1000;
+  border-bottom: var(--primary-color) solid 1px;
 }
 
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  width: 100%;
+  max-width: 1280px;
 
   @media (max-width: 768px) {
     padding: 1rem;
