@@ -8,6 +8,7 @@
   --secondary-color: #ADB1FF;
   --text-color: #FFFFFFDE;
   --background-color: #040418;
+  --background-seconday: #060623;
 
   color: var(--text-color);
 
@@ -47,14 +48,14 @@ h1 {
   color: var(--primary-color)
 }
 
-h4 {
+h2 {
   font-size: 1.5rem;
   margin: 0.5rem 0;
   text-align: left;
   color: var(--primary-color);
 }
 
-h5 {
+h3 {
   font-size: 1rem;
   margin: 0.5rem 0;
   font-weight: 500;
@@ -166,7 +167,7 @@ nav {
   max-width: 1280px;
 
   @media (max-width: 768px) {
-    padding: 1rem;
+    padding: 0 1rem;
   }
 }
 
@@ -195,10 +196,14 @@ nav {
 }
 
 .experience {
-  margin: 3rem 1rem;
+  margin: 2rem 0.5rem;
+  padding: 0 0.5rem;
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 1rem;
+  border-radius: 20px;
+  border: var(--secondary-color) 1px none;
+  background: linear-gradient(var(--background-color), var(--background-seconday));
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr 4fr;
@@ -206,8 +211,12 @@ nav {
   }
 }
 
-.education {
-  margin: 3rem 1rem;
+.education, .skills-container {
+  margin: 2rem 0.5rem;
+  padding: 1rem 0.5rem;
+  border-radius: 20px;
+  border: var(--secondary-color) 1px none;
+  background: linear-gradient(var(--background-color), var(--background-seconday));
 }
 
 .experience-logo {
@@ -229,4 +238,22 @@ nav {
 
 .dot {
   color: var(--secondary-color) !important;
+}
+
+.skills {
+  margin: 2rem 0;
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 100px;
+}
+
+.skill-icon {
+  width: 30px;
+  height: 30px;
+  color: var(--secondary-color)
+}
+
+.skill-info {
+  display: block;
 }

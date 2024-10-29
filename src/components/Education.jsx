@@ -1,5 +1,3 @@
-import React from "react";
-
 const education = [
   {
     name: "Universidad Diego Portales",
@@ -13,17 +11,17 @@ const education = [
 const Education = () => {
   return (
     <div>
-      <h4>
+      <h2>
         Educación<span className="dot">.</span>
-      </h4>
+      </h2>
       {education.map((education, index) => (
         <div key={index} className="education">
           <div className="education-info">
-            <h5>{education.name}</h5>
+            <h3>{education.name}</h3>
             <p className="education-date">
-              <date datetime={education.datetime_start}>{education.start}</date>
+              <date dateTime={education.datetime_start}>{education.start}</date>
               {" - "}
-              <date datetime={education.datetime_end}>{education.end}</date>
+              <date dateTime={education.datetime_end}>{education.end}</date>
             </p>
           </div>
         </div>

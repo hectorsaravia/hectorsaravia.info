@@ -1,11 +1,9 @@
-import React from "react";
-
 const About = () => {
   return (
     <div>
-      <h4>
+      <h2>
         Acerca<span className="dot">.</span>
-      </h4>
+      </h2>
       <p className="about">
         Desarrollador Full-stack, egresado de la Universidad Diego Portales, de
         la carrera Ingeniería civil informática y telecomunicaciones, con

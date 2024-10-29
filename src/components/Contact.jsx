@@ -1,5 +1,4 @@
-import React from "react";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
 const Contact = () => {
@@ -11,7 +10,7 @@ const Contact = () => {
         rel="noopener noreferrer"
         aria-label="Linkedin"
       >
-        <FaLinkedin size={30} title="Linkedin" />
+        <FaLinkedinIn size={30} title="Linkedin" />
       </a>
       <a
         href="https://github.com/hectorsaravia"

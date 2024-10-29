@@ -1,4 +1,3 @@
-import React from "react";
 import rr_logo from "../assets/rr_logo.webp";
 import vlabogadas_logo from "../assets/vlabogadas_logo.webp";
 import dyatec_logo from "../assets/dyatec_logo.webp";
@@ -59,9 +58,9 @@ const experiences = [
 const Experience = () => {
   return (
     <div>
-      <h4>
+      <h2>
         Experiencia<span className="dot">.</span>
-      </h4>
+      </h2>
       {experiences.map((experience, index) => (
         <div key={index} className="experience">
           <img
@@ -70,16 +69,16 @@ const Experience = () => {
             alt={experience.name}
           />
           <div className="experience-info">
-            <h5>{experience.name}</h5>
+            <h3>{experience.name}</h3>
             <p>
               {experience.organisation} · {experience.location}
             </p>
             <p className="experience-date">
-              <date datetime={experience.datetime_start}>
+              <date dateTime={experience.datetime_start}>
                 {experience.start}
               </date>
               {" - "}
-              <date datetime={experience.datetime_end}>{experience.end}</date>
+              <date dateTime={experience.datetime_end}>{experience.end}</date>
             </p>
           </div>
         </div>

@@ -1,8 +1,15 @@
-import React, { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa"; // Importa los iconos de hamburguesa y cerrar
+import { useState } from "react";
+import PropTypes from "prop-types";
+import { FaBars, FaTimes } from "react-icons/fa";
 import hectorSaravia from "../assets/hectorsaravia.svg";
 
-const Navbar = ({ nameRef, aboutRef, experienceRef }) => {
+const Navbar = ({
+  nameRef,
+  aboutRef,
+  experienceRef,
+  skillsRef,
+  educationRef,
+}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -60,10 +67,41 @@ const Navbar = ({ nameRef, aboutRef, experienceRef }) => {
               Experiencia
             </a>
           </li>
+          <li className="navbar-item">
+            <a
+              href="#skills"
+              className="navbar-link"
+              onClick={() => scrollToRef(skillsRef)}
+            >
+              Skills
+            </a>
+          </li>
+          <li className="navbar-item">
+            <a
+              href="#educacion"
+              className="navbar-link"
+              onClick={() => scrollToRef(educationRef)}
+            >
+              Educación
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
   );
+};
+
+Navbar.propTypes = {
+  nameRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+    .isRequired,
+  aboutRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+    .isRequired,
+  experienceRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+    .isRequired,
+  skillsRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+    .isRequired,
+  educationRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+    .isRequired,
 };
 
 export default Navbar;
