@@ -211,12 +211,43 @@ nav {
   }
 }
 
+.knowledge-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
 .education, .skills-container {
   margin: 2rem 0.5rem;
   padding: 1rem 0.5rem;
   border-radius: 20px;
   border: var(--secondary-color) 1px none;
   background: linear-gradient(var(--background-color), var(--background-seconday));
+}
+
+.education {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+}
+
+.education-logo {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  object-fit: contain;
+  max-width: 200px;
+
+  @media screen and (max-width: 768px) {
+    margin: auto 0;
+  }
 }
 
 .experience-logo {

@@ -73,7 +73,7 @@ const Navbar = ({
               className="navbar-link"
               onClick={() => scrollToRef(skillsRef)}
             >
-              Skills
+              Habilidades
             </a>
           </li>
           <li className="navbar-item">

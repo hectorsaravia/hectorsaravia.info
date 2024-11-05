@@ -1,3 +1,5 @@
+import udp_logo from "../assets/udp.webp";
+
 const education = [
   {
     name: "Universidad Diego Portales",
@@ -5,6 +7,7 @@ const education = [
     datetime_end: "2023",
     start: "2016",
     end: "2023",
+    logo: udp_logo,
   },
 ];
 
@@ -16,12 +19,17 @@ const Education = () => {
       </h2>
       {education.map((education, index) => (
         <div key={index} className="education">
+          <img
+            className="education-logo"
+            src={education.logo}
+            alt={education.name}
+          />
           <div className="education-info">
             <h3>{education.name}</h3>
             <p className="education-date">
-              <date dateTime={education.datetime_start}>{education.start}</date>
+              <time dateTime={education.datetime_start}>{education.start}</time>
               {" - "}
-              <date dateTime={education.datetime_end}>{education.end}</date>
+              <time dateTime={education.datetime_end}>{education.end}</time>
             </p>
           </div>
         </div>

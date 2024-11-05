@@ -74,11 +74,11 @@ const Experience = () => {
               {experience.organisation} · {experience.location}
             </p>
             <p className="experience-date">
-              <date dateTime={experience.datetime_start}>
+              <time dateTime={experience.datetime_start}>
                 {experience.start}
-              </date>
+              </time>
               {" - "}
-              <date dateTime={experience.datetime_end}>{experience.end}</date>
+              <time dateTime={experience.datetime_end}>{experience.end}</time>
             </p>
           </div>
         </div>
