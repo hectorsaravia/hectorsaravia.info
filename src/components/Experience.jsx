@@ -1,6 +1,6 @@
-import rr_logo from "../assets/rr_logo.webp";
-import vlabogadas_logo from "../assets/vlabogadas_logo.webp";
-import dyatec_logo from "../assets/dyatec_logo.webp";
+import rr_logo from "/rr_logo.webp";
+import vlabogadas_logo from "/vlabogadas_logo.webp";
+import dyatec_logo from "/dyatec_logo.webp";
 
 const experiences = [
   {

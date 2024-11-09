@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { FaBars, FaTimes } from "react-icons/fa";
-import hectorSaravia from "../assets/hectorsaravia.svg";
+import hectorSaravia from "/hectorsaravia.svg";
 
 const Navbar = ({
   nameRef,

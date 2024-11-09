@@ -1,4 +1,4 @@
-import udp_logo from "../assets/udp.webp";
+import udp_logo from "/udp.webp";
 
 const education = [
   {

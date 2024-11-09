@@ -1,13 +1,14 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import Navbar from "./components/Navbar";
 import Name from "./components/Name";
 import About from "./components/About";
-import Experience from "./components/Experience";
-import Education from "./components/Education";
 import Contact from "./components/Contact";
-import Skills from "./components/Skills";
-import Footer from "./components/Footer";
 import "./App.css";
+
+const Skills = React.lazy(() => import("@/components/Skills"));
+const Experience = React.lazy(() => import("@/components/Experience"));
+const Education = React.lazy(() => import("@/components/Education"));
+const Footer = React.lazy(() => import("@/components/Footer"));
 
 function App() {
   const nameRef = useRef(null);
