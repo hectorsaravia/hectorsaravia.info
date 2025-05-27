@@ -16,8 +16,8 @@ import {
   FaCss3Alt,
   FaLinux,
   FaCloudflare,
+  FaWindows
 } from "react-icons/fa";
-
 import {
   SiNextdotjs,
   SiNuxtdotjs,
@@ -26,17 +26,16 @@ import {
   SiGooglecloud,
   SiGithubactions,
   SiTypescript,
-  SiCsharp,
   SiDotnet,
   SiMysql,
   SiPostgresql,
   SiSqlite,
-  SiMicrosoftsqlserver,
-  SiWindows11,
   SiVercel,
   SiKubernetes,
   SiStrapi,
 } from "react-icons/si";
+import { TbBrandCSharp } from "react-icons/tb";
+import { DiMsqlServer } from "react-icons/di";
 
 import PropTypes from "prop-types";
 
@@ -50,7 +49,7 @@ const knowledges = [
       { name: "HTML", icon: FaHtml5 },
       { name: "CSS", icon: FaCss3Alt },
       { name: "TypeScript", icon: SiTypescript },
-      { name: "C#", icon: SiCsharp },
+      { name: "C#", icon: TbBrandCSharp },
     ],
   },
   {
@@ -73,7 +72,7 @@ const knowledges = [
       { name: "MySQL", icon: SiMysql },
       { name: "PostgreSQL", icon: SiPostgresql },
       { name: "SQLite", icon: SiSqlite },
-      { name: "MS Server SQL", icon: SiMicrosoftsqlserver },
+      { name: "MS Server SQL", icon: DiMsqlServer },
     ],
   },
   {
@@ -112,7 +111,7 @@ const knowledges = [
     name: "Sistemas operativos",
     skills: [
       { name: "GNU/Linux", icon: FaLinux },
-      { name: "Windows", icon: SiWindows11 },
+      { name: "Windows", icon: FaWindows },
     ],
   },
 ];
